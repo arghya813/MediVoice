@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 from ..database import get_db
 from ..models import MedicationScan
 from ..schemas import ScanResponse, ScansResponse
+from ..security import verify_passcode
 
 router = APIRouter(tags=["scans"])
 
@@ -21,6 +22,13 @@ def list_scans(
         count=total,
         items=[ScanResponse.model_validate(record) for record in records],
     )
+
+
+@router.delete("/scans", status_code=204, dependencies=[Depends(verify_passcode)])
+def clear_scans(db: Session = Depends(get_db)) -> Response:
+    db.query(MedicationScan).delete()
+    db.commit()
+    return Response(status_code=204)
 
 
 @router.get("/scans/{scan_id}", response_model=ScanResponse)

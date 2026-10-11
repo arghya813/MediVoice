@@ -94,3 +94,7 @@ export async function speak(text) {
 export function deleteScan(id) {
   return request(`/api/scans/${id}`, { method: "DELETE" });
 }
+
+export function clearScans() {
+  return request("/api/scans", { method: "DELETE" });
+}
