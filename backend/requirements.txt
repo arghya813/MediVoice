@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+sqlalchemy==2.0.41
+pydantic
+pydantic-settings
+google-genai
+python-multipart
+python-dotenv
+pillow
+elevenlabs==2.16.0
