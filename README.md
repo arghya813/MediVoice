@@ -124,7 +124,7 @@ cp .env.example .env
 python -m uvicorn app.main:app --reload --port 8000
 ```
 
-API docs: https://api.render.com/deploy/srv-db5qi5dckfvc73b3uu2g?key=qU7fcqxGwsw
+API docs: https://medi-voice.onrender.com/
 
 ### 2. Frontend
 
@@ -136,7 +136,7 @@ npm run dev
 
 Open http://localhost:5173
 
-> The frontend talks to `https://api.render.com/deploy/srv-db5qi5dckfvc73b3uu2g?key=qU7fcqxGwsw` (see `src/api/client.js`).
+> The frontend talks to `https://medi-voice.onrender.com/` (see `src/api/client.js`).
 
 ---
 
@@ -177,7 +177,7 @@ Copy `backend/.env.example` → `backend/.env` and fill in:
 **Example — scan a label**
 
 ```bash
-curl -X POST https://api.render.com/deploy/srv-db5qi5dckfvc73b3uu2g?key=qU7fcqxGwsw/api/scan-medicine \
+curl -X POST https://medi-voice.onrender.com//api/scan-medicine \
   -H "X-Demo-Passcode: MEDIVOICE2026" \
   -F "files=@label.jpg"
 ```
@@ -185,7 +185,7 @@ curl -X POST https://api.render.com/deploy/srv-db5qi5dckfvc73b3uu2g?key=qU7fcqxG
 **Example — read result aloud**
 
 ```bash
-curl -X POST https://api.render.com/deploy/srv-db5qi5dckfvc73b3uu2g?key=qU7fcqxGwsw/speak \
+curl -X POST https://medi-voice.onrender.com//speak \
   -H "X-Demo-Passcode: MEDIVOICE2026" \
   -H "Content-Type: application/json" \
   -d '{"text":"Take one tablet after food"}' \

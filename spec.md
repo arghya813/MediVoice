@@ -100,7 +100,7 @@ medivoice/
         ├── main.jsx
         ├── App.jsx
         ├── index.css
-        ├── api/client.js       # all calls go to https://api.render.com/deploy/srv-db5qi5dckfvc73b3uu2g?key=qU7fcqxGwsw
+        ├── api/client.js       # all calls go to https://medi-voice.onrender.com/
         ├── lib/labels.js       # shared helpers (formatting, expiry badges)
         └── components/
             ├── ScanCard.jsx    # camera/upload zone + live preview
@@ -264,9 +264,9 @@ Delete a scan. `204` / `404`.
   ```js
   const fd = new FormData();
   fd.append("image", file);
-  await fetch("https://api.render.com/deploy/srv-db5qi5dckfvc73b3uu2g?key=qU7fcqxGwsw/api/scan-medicine", { method: "POST", body: fd });
+  await fetch("https://medi-voice.onrender.com//api/scan-medicine", { method: "POST", body: fd });
   ```
-  (All calls go through `src/api/client.js`, base URL `https://api.render.com/deploy/srv-db5qi5dckfvc73b3uu2g?key=qU7fcqxGwsw`.)
+  (All calls go through `src/api/client.js`, base URL `https://medi-voice.onrender.com/`.)
 - **Loader** — spinner + "Gemini is reading your label…" while awaiting response.
 - **ResultCard** — designed for accessibility: minimum ~18px type, strong contrast,
   clear hierarchy:

@@ -1,4 +1,4 @@
-const API_BASE = "https://api.render.com/deploy/srv-db5qi5dckfvc73b3uu2g?key=qU7fcqxGwsw";
+const API_BASE = "https://medi-voice.onrender.com/";
 
 // Demo passcode is a shared secret, not true authentication. It is sent on
 // every request so the backend can reject uninvited callers during the demo.
