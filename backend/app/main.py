@@ -27,10 +27,10 @@ app = FastAPI(title="MediVoice API", version="0.1.0")
 # CORS: only the explicitly allowed origins are accepted. No wildcard "*".
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.allowed_origin_list,
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["GET", "POST", "DELETE", "OPTIONS"],
-    allow_headers=["Content-Type", PASSCODE_HEADER],
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.include_router(scan.router, prefix="/api")
